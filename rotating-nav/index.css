@@ -1,0 +1,83 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    overflow-x: hidden;
+    height:100vh;
+    background-color: brown;
+}
+
+.container{
+    transform-origin:top left;
+    transition: transform 0.5s linear;
+    width:100vw;
+    height:100vh;
+    padding:50px;
+    background-color: beige;
+}
+
+.container.show-nav{
+    transform:rotate(-20deg)
+}
+.container.show-nav + nav li{
+    transform:translateX(0);
+    transition-delay:0.3s;
+}
+
+.circle-container{
+    position:fixed;
+    top:-010px;
+    left:-100px;
+}
+
+.circle{
+    background-color:pink;
+    height:200px;
+    width:200px;
+    position: relative;
+    transform: transform 0.5s linear;
+}
+
+.circle button{
+    position: absolute;
+    top:50%;
+    left:50%;
+    background:transparent;
+    border:0;
+    font-size:26px;
+    color:white;
+
+}
+
+.circle button:focus{
+    outline:none;
+}
+.circle button#open{
+    left:60%;
+}
+.circle button#close{
+    top:60%;
+    transform:rotate(90deg)
+
+}
+
+.container.show-nav .circle{
+    transform:rotate(-70deg)
+}
+
+nav{
+    position: fixed;
+    bottom:40px;
+    left:0;
+    z-index:2;
+}
+nav ul{
+    list-style-type: none;
+}
+nav ul li{
+    font-size: 12px;
+    padding-top:10px;
+}

@@ -1,0 +1,23 @@
+
+
+body{
+    margin:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+
+.bg{
+    background:url('https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+    z-index:-1;
+    width:100vw;
+    height:100vw;
+    position: absolute;
+    filter:blur(30px)
+}
+
+.loading-text{
+    font-size:30px;
+    color:white;
+}
