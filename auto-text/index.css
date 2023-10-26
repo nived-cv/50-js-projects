@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+body{
+    margin:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    font-family:'Muli',sans-serif;
+    background-color:darksalmon;
+}
+
+div{
+   position:absolute;
+   bottom:20px;
+   background: rgba(0,0,0,0.1) ;
+   padding:10px 20px;
+   font-size:18px;
+
+}
+
+input{
+    width:50px;
+    padding:5px;
+    font-size:18px;
+    background-color:darksalmon;
+    border:none;
+    text-align:center;
+}
+
+input:focus{
+    outline:none;
+}
