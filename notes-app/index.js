@@ -2,6 +2,7 @@
 
 const addNote = document.getElementById('addNote');
 const board = document.getElementById('board');
+//let keyArr = []
 
 function render(){
 
@@ -75,15 +76,15 @@ function addFunctionsToNote(note){
 function saveText(inputEl,outputEl){
 
     outputEl.innerText = inputEl.value;
-
+    //key="meow"
     // key = value.slice(0,2);
     // localStorage.setItem(key,value)
     // let keyArr = []    
     
     updateLs()
 
-    // keyArr.push(key)
-    // console.log("savetext",keyArr)
+    //keyArr.push(key)
+    //console.log("savetext",keyArr)
     // keyArr = JSON.stringify(keyArr)
     // localStorage.setItem("keyArr",keyArr)
 

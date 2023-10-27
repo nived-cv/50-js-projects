@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+body{
+    margin:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    font-family:'Muli',sans-serif;
+}
+
+.container{
+    max-height:70vh;
+    border-radius:12px;
+    overflow: clip;
+}
+
+.options{
+    background-color:blue;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    padding:10px;
+}
+
+.options p{
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.options span{
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.search{
+    background-color: rgba(0,0,0,0.3);
+    padding:5px;
+    border-radius:12px;
+    outline:0;
+    border:0;
+    height:3vh;
+}
+.search::placeholder{
+    color:white;
+    
+}
+
+.list{
+    height:50vh;
+    width:100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.item{
+    display:flex;
+    justify-content: space-between;
+    padding:15px 0;
+    border-bottom: 1px solid #aaa;
+}
+
+.profile-img img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.profile-img{
+    height:6vh;
+    width:4vw;
+    border-radius: 50%;
+    overflow: clip;
+    margin:0 8px;
+}
+.item .text-section{
+    width:11vw;
+    display:flex;
+    flex-direction:column;
+    text-align:left;
+}
+.item .place{
+    font-size:12px;
+}
+
+.item.hidden{
+    display:none;
+}
