@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+body{
+    margin:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    font-family:'Muli',sans-serif;
+}
+
+.container{
+    background-color:blue;
+    padding:18px;
+    border-radius:12px;
+    width:50vw;
+    height:20vh;
+}
+
+.progress{
+    width:100%;
+    height:3px;
+    background-color:white;
+    animation: progress-load 10s linear;
+}
+
+.image-section img{
+    width:100%;
+    height:100%;
+}
+
+.image-section{
+    width:20px;
+    height:20px;
+}
+
+
+@keyframes progress-load{
+
+    0%{
+        width:0%
+    }
+
+    100%{
+        width:100%;
+    }
+}
