@@ -7,24 +7,103 @@ body{
     align-items: center;
     height:100vh;
     font-family:'Muli',sans-serif;
+    background-color: blue;
+    color:white;
+}
+
+.start-screen{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    transition:transform .8s linear;
+    position: fixed;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.start-screen.inactive{
+    transform:translateY(-1000px);
+}
+
+.start-screen h2{
+    font-size:28px;
+}
+
+.start-screen button{
+    color:blue;
+    padding:10px 15px;
+    letter-spacing: 1px;
+}
+
+.start-screen button:active{
+    transform:scale(0.98);
+}
+
+.choose-insect{
+    display:flex;
+    flex-direction: column;
+    animation:loadElement .8s linear;
+    transition: translate .8s linear;
+}
+
+.choose-insect.inactive{
+    transform:translateY(-1000px);
+}
+
+.choose-insect.inactive{
+    display:none;
+}
+
+.characters{
+    display:flex;
+    justify-content:space-around;
+}
+
+.character{
+    border: 1px solid white;
+    width: calc(100% / 5);
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+}
+
+.character:hover{
+    background-color:white;
+    color:blue;
+}
+
+.game-screen.inactive{
+    display:none;
 }
 
 .game-screen{
     width:100%;
     height:100%;
     position:relative;
+    animation: loadElement .8s linear;
+}
+
+.time.inactive{
+    display:none;
 }
 
 .time{
     position:absolute;
     top:20px;
     left:20px;
+    animation: loadElement .8s linear;
+}
+
+.score-board.inactive{
+    display:none;
 }
 
 .score-board{
     position:absolute;
     right:20px;
     top:20px;
+    animation: loadElement .8s linear;
 }
 
 .message{
@@ -45,29 +124,21 @@ body{
     animation: loadElement 2s ease;
     z-index:2;
     background-color:white;
+    color:blue;
+    font-weight:bold;
 }
 
 .sprite{
     position:fixed;
     cursor: pointer;
+    font-size:30px;
 }
 
 @keyframes loadElement{
     0%{
-        transform:translateY(90vh);
+        transform:translateY(50vh);
     }
     100%{
         transform:translateY(0);
-    }
-}
-
-@keyframes removeElement{
-    0%{
-        transform:translateY(0);
-        opacity:1;
-    }
-    100%{
-        transform:translateY(-20vh);
-        opacity:0;
     }
 }

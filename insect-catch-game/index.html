@@ -8,14 +8,42 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="game-screen">
+
+    <div class="start-screen">
+        <h2>Catch The Insect</h2>
+        <button id="startBtn">Play Game</button>
+    </div>
+
+    <div class="choose-insect inactive">
+        <h2>What is your favorite player ?</h2>
+        <div class="characters">
+            <div class="character">
+                <p class="name">fly</p>
+                <p class="image">🪰</p>
+            </div>
+            <div class="character">
+                <p class="name">cat</p>
+                <p class="image">🐈</p>
+            </div>
+            <div class="character">
+                <p class="name">mosquito</p>
+                <p class="image">🦟</p>
+            </div>
+            <div class="character">
+                <p class="name">dog</p>
+                <p class="image">🐕</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-screen inactive">
         <div class="time">
             <span>Time : </span>
-            <span id="time">00:02</span>
+            <span id="time"></span>
         </div>
         <div class="score-board">
             <span>Score</span>
-            <span id="score" class="score">0</span>
+            <span id="score" class="score"></span>
         </div>
         <div class="message">
             Are you tired yet ? this is impossible

@@ -1,15 +1,34 @@
 
-const screen = document.querySelector('.game-screen');
+const startScreen = document.querySelector('.start-screen')
+const startBtn = document.querySelector('#startBtn')
+const playerSelectScreen = document.querySelector('.choose-insect')
+const characters = document.querySelectorAll('.character')
+const gameScreen = document.querySelector('.game-screen');
 const messageEl = document.querySelector('.message')
 const scoreEl = document.getElementById('score')
 const timeEl = document.getElementById('time')
 let m1 = 0,m2 = 0,s1 = 0,s2 = 0;
 let score = 0
-let sprites = {
-    "fly":"🪰",
-    "cat":"🐈",
-    "dog":"🐕"
-}
+
+//execution starts here
+startBtn.addEventListener('click',()=>{
+    startScreen.classList.add('inactive')
+    setTimeout(()=> startScreen.remove(),800)
+    playerSelectScreen.classList.remove('inactive')
+})
+
+characters.forEach((character)=>{
+    character.addEventListener('click',(e)=>{
+        playerSelectScreen.classList.add('inactive')
+        setTimeout(()=>playerSelectScreen.remove(),800)
+        gameScreen.classList.remove('inactive')
+        let sprite=e.target.querySelector('.image').innerText
+        console.log(sprite)
+        createSprite(sprite)
+        setInterval(timeIncrement,1000)
+    })
+})
+//ends here
 
 function createSprite(sprite){
     
@@ -21,7 +40,7 @@ function createSprite(sprite){
         const {x,y} = generatePosition()
         el.style.left = x+'px'
         el.style.top = y +'px'
-        screen.appendChild(el)
+        gameScreen.appendChild(el)
 
         el.addEventListener('click',e => removeSprite(el) )
     }
@@ -50,12 +69,22 @@ function scoreIncrement(){
     messageEl.classList.add('active')
 }
 
-setInterval(()=>{
+function timeIncrement(){
+    if(s2>=9) {
+        s2=0;
+        s1++;
+    }
+    else
+    s2++
 
-    s2==9 ? `${s2=0} ${s1++}`: s2++
-    s1>0 && s1 == 9? s1 =0 : m2++,
-    timeEl.innerText = `${m1} ${m2} : ${s1} ${s2}`;
-},1000)
-// test calls
-createSprite(sprites.fly)
-//
+    if(s1>=5) {
+        s1=0
+        m2++
+    }
+
+    if(m2>=9) {
+        m2=0
+        m1++
+    }
+    timeEl.innerText = `${m1} ${m2} : ${s1} ${s2}`
+}
